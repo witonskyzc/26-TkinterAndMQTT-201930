@@ -5,9 +5,14 @@ import time
 
 
 class DelegateThatReceives(object):
+    def __init__(self):
+        self.number_of_messages = 0
 
-    def say_it(self, message):
-        print("Message received!", message)
+    def say_it(self, name, message):
+        self.number_of_messages = self.number_of_messages + 1
+        part1 = "Message {} received from {}:".format(self.number_of_messages,
+                                                      name)
+        print(part1, message)
 
 
 def main():
